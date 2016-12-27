@@ -1,5 +1,6 @@
 <%@ include file="common/header.jsp"%>
 
+<c:url var="userAction" value="/login" />
 <div class="container-fluid" style="padding-top: 60px;">
 	<div class="row" style="padding-top: 30px;">
 		<div class="col-sm-offset-3 col-sm-6">
@@ -8,14 +9,14 @@
 					<h4 class="text-center">Existing User Login</h4>
 				</div>
 				<div class="panel-body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" role="form" action="<c:url value='/user/login'/>" method="post">
 						<div class="form-group text-right">
 							<div class="col-sm-3">
-								<label class="label-control">Email</label>
+								<label class="label-control">Username</label>
 							</div>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" id="email"
-									placeholder="Enter email">
+								<input type="text" class="form-control" id="username"
+									placeholder="Enter User name">
 							</div>
 						</div>
 						<div class="form-group text-right">
@@ -23,7 +24,7 @@
 								<label class="label-control">Password</label>
 							</div>
 							<div class="col-sm-9">
-								<input type="password" class="form-control" id="passwd"
+								<input type="password" class="form-control" id="password"
 									placeholder="Enter password">
 							</div>
 						</div>
@@ -33,7 +34,8 @@
 									Sign Up</a>
 							</div>
 							<div class="col-sm-6">
-								<button type="submit" class="btn btn-info">Sign In</button>
+								<input type="submit" value="Sign In" class="btn btn-primary">
+								<input type="hidden" name="${ _csrf.parameterName }" value="${ _csrf.token }">
 							</div>
 						</div>
 					</form>

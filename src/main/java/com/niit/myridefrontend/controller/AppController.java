@@ -19,18 +19,21 @@ public class AppController {
 	ProductDao productDao;
 	
 	@RequestMapping("/")
-	public String index() {
-		return "index";
+	public ModelAndView index() {
+		ModelAndView view = new ModelAndView("index");
+		return view;
 	}
 	
 	@RequestMapping("/register")
-	public String register() {
-		return "register";
+	public ModelAndView register() {
+		ModelAndView view = new ModelAndView("register");
+		return view;
 	}
 	
 	@RequestMapping("/login")
-	public String login() {
-		return "login";
+	public ModelAndView login() {
+		ModelAndView view = new ModelAndView("login");
+		return view;
 	}
 	
 	@RequestMapping("/products/{category}")
