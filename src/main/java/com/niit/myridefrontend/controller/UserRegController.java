@@ -34,13 +34,5 @@ public class UserRegController {
 			return "redirect:/";
 		}
 	}
-	
-	/*@RequestMapping(value = "/user/login", method = RequestMethod.POST)
-	public String userLogin(@Valid @ModelAttribute("user") User user, BindingResult result) {
-		if (result.hasErrors()) {
-			return "login";
-		} else {
-			return "redirect:/";
-		}
-	}*/
+
 }

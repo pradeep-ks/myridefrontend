@@ -28,9 +28,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 			.antMatchers("/").permitAll()
-			.antMatchers("/cart**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-			.antMatchers("/addToCart/**").access("hasAnyRole('ROLE_ADMIN', 'ROLE_USER')")
-			.antMatchers("/productAdmin**").access("hasRole('ROLE_ADMIN')")
+			.antMatchers("/cart**").access("hasAnyRole('ADMIN', 'USER')")
+			.antMatchers("/addToCart/**").access("hasAnyRole('ADMIN', 'USER')")
+			.antMatchers("/productAdmin**").access("hasRole('ADMIN')")
 			.and().formLogin().loginPage("/login")
 			.and().logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 			.and().csrf().disable();
