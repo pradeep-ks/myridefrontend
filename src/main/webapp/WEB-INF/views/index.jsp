@@ -1,7 +1,7 @@
 <%@ include file="common/header.jsp"%>
 
 <!-- jumbotron -->
-<div class="container-fluid" id="thumbnails">
+<div class="container" id="thumbnails">
 	<!-- image carousel begins -->
 	<div id="img-carousel" class="carousel slide" data-ride="carousel"
 		data-interval="3000">
@@ -61,8 +61,36 @@
 		<!-- carousel controls ends -->
 	</div>
 	<!-- image carousel ends -->
+	<div class="row text-center">
+		<div class="panel panel-info">
+			<div class="panel-heading text-center">Shop By Category</div>
+			<div class="panel-body text-center">
+				<div class="row">
+					<div class="col-md-4">
+						<a href="<c:url value='/products/bikes' />" class="img-thumbnail">
+							<img src="<c:url value='/resources/images/bike.jpg'/>"
+							width="200" height="200"><br> Bikes
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="<c:url value='/products/scooties' />"
+							class="img-thumbnail"> <img
+							src="<c:url value='/resources/images/scooty.jpg'/>" width="200"
+							height="200"><br> Scooties
+						</a>
+					</div>
+					<div class="col-md-4">
+						<a href="<c:url value='/products/spares' />" class="img-thumbnail">
+							<img src="<c:url value='/resources/images/bike.jpg'/>"
+							width="200" height="200"><br> Spares
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<!-- image thumbnails begins -->
-	<div class="row text-center"
+	<%-- <div class="row text-center"
 		style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="panel panel-info">
 			<div class="panel-heading text-center">Shop By Brand</div>
@@ -100,9 +128,9 @@
 			</div>
 		</div>
 	</div>
-
 	<!-- image thumbnails ends -->
-	<%-- <div class="row text-center"
+	
+	<div class="row text-center"
 		style="margin-top: 20px; margin-bottom: 20px;">
 		<div class="panel panel-info">
 			<div class="panel-heading text-center">Shop By Price</div>

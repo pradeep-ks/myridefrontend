@@ -42,7 +42,7 @@ public class CartController {
 	public ModelAndView cart(@PathVariable("productId") int productId, Principal principal) {
 		ModelAndView model = new ModelAndView("cart");
 		
-		User user = userDao.getByUsername(principal.getName());
+		User user = userDao.getUserByUsername(principal.getName());
 		model.addObject("user", user);
 		Cart cart = user.getCart();
 		Product product = productDao.getById(productId);
@@ -89,7 +89,7 @@ public class CartController {
 	@RequestMapping("/showCart")
 	public ModelAndView showCart(Principal principal) {
 		ModelAndView model = new ModelAndView("cart");
-		User user = userDao.getByUsername(principal.getName());
+		User user = userDao.getUserByUsername(principal.getName());
 		model.addObject("user", user);
 		
 		return model;

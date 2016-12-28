@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -30,9 +32,15 @@ public class AppController {
 		return view;
 	}
 	
-	@RequestMapping("/login")
-	public ModelAndView login() {
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public ModelAndView login(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "logout", required = false) String logout) {
 		ModelAndView view = new ModelAndView("login");
+		if (error != null) {
+			view.addObject("error", error);
+		}
+		if (logout != null) {
+			view.addObject("message", "You logged out successfully!");
+		}
 		return view;
 	}
 	
